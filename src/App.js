@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ReactPolling from 'react-polling';
+import ReactPolling from 'react-polling'; 
 
 function App() {
+  const apiKey = process.env.REACT_APP_WEATHER_API_KEY
+  const lat =  "-23.5489";
+  const lon =  "-46.6388";
+  const part = "hourly,minutely";
+  const [weatherData, setWeatherData] = useState([])
+
   return (
     <div className="App">
       <header className="App-header">
