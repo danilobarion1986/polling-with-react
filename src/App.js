@@ -10,6 +10,15 @@ function App() {
   const part = "hourly,minutely";
   const [weatherData, setWeatherData] = useState([])
 
+  const convertTimestampToDate = (unixTimestamp) => {
+    let date = new Date(unixTimestamp * 1000);
+    let day = date.getDate(); 
+    let month = date.getMonth();
+    let year = date.getFullYear();
+
+    return `${day}/${month}/${year}` 
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -36,7 +45,7 @@ function App() {
               <h2>Hello I am polling</h2>
               {weatherData.map((item, index) => {
                 return (
-                  <p key={index}>{item.dt}</p>
+                  <p key={index}>{convertTimestampToDate(item.dt)}</p>
                 )
                 })}
               </div>
