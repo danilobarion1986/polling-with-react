@@ -17,17 +17,18 @@ function App() {
       </header>
 
       <ReactPolling
-        url={'http://api-candidatos-qa.ad.vagastec.com.br/api/v1/healthcheck'}
-        interval= {3000}
-        retryCount={3}
-        onSuccess={() => {
+        url={`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=${part}&appid=${apiKey}`}
+        interval= {20000}
+        retryCount={2}
+        onSuccess={(response) => {
+            console.log(response);
             console.log('handle success');
+            setWeatherData(response.daily);
             return true
           }
         }
-        onFailure={() => console.log('handle success')}
+        onFailure={(error) => console.log(error)}
         method={'GET'}
-        body={ { 'teste': true } }
         render={({ startPolling, stopPolling, isPolling }) => {
           if (isPolling) {
             return (
