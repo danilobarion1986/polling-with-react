@@ -18,7 +18,7 @@ function App() {
 
       <ReactPolling
         url={`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=${part}&appid=${apiKey}`}
-        interval= {20000}
+        interval= {10000}
         retryCount={2}
         onSuccess={(response) => {
             console.log(response);
