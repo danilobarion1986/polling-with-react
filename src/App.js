@@ -32,7 +32,14 @@ function App() {
         render={({ startPolling, stopPolling, isPolling }) => {
           if (isPolling) {
             return (
-              <div> Hello I am polling</div>
+              <div> 
+              <h2>Hello I am polling</h2>
+              {weatherData.map((item, index) => {
+                return (
+                  <p key={index}>{item.dt}</p>
+                )
+                })}
+              </div>
             );
           } else {
             return (
