@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import ReactPolling from 'react-polling'; 
 
@@ -13,7 +12,7 @@ function App() {
   const convertTimestampToDate = (unixTimestamp) => {
     let date = new Date(unixTimestamp * 1000);
     let day = date.getDate(); 
-    let month = date.getMonth();
+    let month = date.getMonth() + 1;
     let year = date.getFullYear();
 
     return `${day}/${month}/${year}` 
@@ -21,12 +20,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
 
       <ReactPolling
-        url={`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=${part}&appid=${apiKey}`}
+        url={`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=${part}&appid=${apiKey}&units=metric`}
         interval= {10000}
         retryCount={2}
         onSuccess={(response) => {
@@ -42,17 +38,17 @@ function App() {
           if (isPolling) {
             return (
               <div> 
-              <h2>Hello I am polling</h2>
-              {weatherData.map((item, index) => {
+              <h2>This is the seven days weather forecast</h2>
+              {weatherData.map((day, index) => {
                 return (
-                  <p key={index}>{convertTimestampToDate(item.dt)}</p>
+                  <p key={index}>{convertTimestampToDate(day.dt)} => Min Temp: {day.temp.min} ºC, Max Temp: {day.temp.max} ºC</p>
                 )
                 })}
               </div>
             );
           } else {
             return (
-              <div> Hello I stopped polling</div>
+              <div> No more weather today! Bye!</div>
             );
           }
         }}
