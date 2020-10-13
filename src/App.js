@@ -1,35 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
-import ReactPolling from 'react-polling';
+import ReactPolling from 'react-polling'; 
 
 function App() {
+  const apiKey = process.env.REACT_APP_WEATHER_API_KEY
+  const lat =  "-23.5489";
+  const lon =  "-46.6388";
+  const part = "hourly,minutely";
+  const [weatherData, setWeatherData] = useState([])
+
+  const convertTimestampToDate = (unixTimestamp) => {
+    let date = new Date(unixTimestamp * 1000);
+    let day = date.getDate(); 
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+
+    return `${day}/${month}/${year}` 
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
 
       <ReactPolling
-        url={'http://api-candidatos-qa.ad.vagastec.com.br/api/v1/healthcheck'}
-        interval= {3000}
-        retryCount={3}
-        onSuccess={() => {
+        url={`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=${part}&appid=${apiKey}&units=metric`}
+        interval= {10000}
+        retryCount={2}
+        onSuccess={(response) => {
+            console.log(response);
             console.log('handle success');
+            setWeatherData(response.daily);
             return true
           }
         }
-        onFailure={() => console.log('handle success')}
+        onFailure={(error) => console.log(error)}
         method={'GET'}
-        body={ { 'teste': true } }
         render={({ startPolling, stopPolling, isPolling }) => {
           if (isPolling) {
             return (
-              <div> Hello I am polling</div>
+              <div> 
+              <h2>This is the seven days weather forecast</h2>
+              {weatherData.map((day, index) => {
+                return (
+                  <p key={index}>{convertTimestampToDate(day.dt)} => Min Temp: {day.temp.min} ºC, Max Temp: {day.temp.max} ºC</p>
+                )
+                })}
+              </div>
             );
           } else {
             return (
-              <div> Hello I stopped polling</div>
+              <div> No more weather today! Bye!</div>
             );
           }
         }}
