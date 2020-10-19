@@ -8,6 +8,8 @@ import WeatherHumidity from './Components/WeatherHumidity';
 import WeatherTemp from './Components/WeatherTemp';
 import WeatherDate from "./Components/WeatherDate";
 import ForecastList from './Components/ForecastList';
+import AppHeader from "./Components/AppHeader";
+import AppFooter from './Components/AppFooter';
 
 function App() {
   const apiKey = process.env.REACT_APP_WEATHER_API_KEY
@@ -60,11 +62,15 @@ function App() {
         render={({ startPolling, stopPolling, isPolling }) => {
           if (isPolling) {
             return (
-              <React.Fragment> 
-                <ForecastTitle title={"5-day weather forecast for Sao Paulo"}/>
-                <ForecastList>
-                  {CardWeatherData}
-                </ForecastList>
+              <React.Fragment>
+                <AppHeader />
+                <main style={{paddingTop: "56px"}}>
+                  <ForecastTitle title={"5-day weather forecast for Sao Paulo"}/>
+                  <ForecastList>
+                    {CardWeatherData}
+                  </ForecastList>
+                </main>
+                <AppFooter />
               </React.Fragment>
             );
           } else {
