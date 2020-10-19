@@ -26,7 +26,7 @@ function App() {
     return `${day}/${month}` 
   }
 
-  const CardWeatherData = weatherData.map((day, index) => {
+  const CardWeatherData = weatherData.slice(0,5).map((day, index) => {
     return (
       <React.Fragment>
         <DailyForecastCard key={index}>
