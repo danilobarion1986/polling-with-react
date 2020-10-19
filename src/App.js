@@ -29,13 +29,13 @@ function App() {
       <React.Fragment>
         <DailyForecastCard key={index}>
           <WeatherDate date={convertTimestampToDate(day.dt)}/>
-          <WeatherCondition />
+          <WeatherCondition condition={day.weather[0].main}/>
           <HeatIndicator />
           <WeatherTemp 
             maxTemp={Math.round(day.temp.max) + "º"}
             minTemp={Math.round(day.temp.min) + "º"}
           />
-          <WeatherHumidity humidity={day.weather.main}/>
+          <WeatherHumidity humidity={day.humidity}/>
         </DailyForecastCard>
       </React.Fragment>
     )
