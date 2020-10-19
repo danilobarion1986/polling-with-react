@@ -28,7 +28,6 @@ function App() {
 
   const CardWeatherData = weatherData.slice(0,5).map((day, index) => {
     return (
-      <React.Fragment>
         <DailyForecastCard key={index}>
           <WeatherDate date={convertTimestampToDate(day.dt)}/>
           <WeatherCondition condition={day.weather[0].main}/>
@@ -39,9 +38,8 @@ function App() {
           />
           <WeatherHumidity humidity={day.humidity}/>
         </DailyForecastCard>
-      </React.Fragment>
     )
-    })
+  })
 
   return (
     <div className="App">
