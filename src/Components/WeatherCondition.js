@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 const ParagStyled = styled.p`
   display: block;
-  @media (max-width: 500px) {
+  margin: 0.2em;
+  @media (max-width: 680px) {
     grid-area: condition;
   }
 `

@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 const DivStyled = styled.h3`
   display: block;
-  @media (max-width: 500px) {
+  margin: inherit;
+  @media (max-width: 680px) {
     grid-area: temp;
   }
 `
