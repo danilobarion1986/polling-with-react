@@ -30,13 +30,13 @@ function App() {
     return (
         <DailyForecastCard key={index}>
           <WeatherDate date={convertTimestampToDate(day.dt)}/>
-          <WeatherCondition condition={day.weather[0].main}/>
-          <HeatIndicator />
+          <HeatIndicator maxHeat={Math.round(day.temp.max)}/>
           <WeatherTemp 
             maxTemp={Math.round(day.temp.max) + "º"}
             minTemp={Math.round(day.temp.min) + "º"}
           />
-          <WeatherHumidity humidity={day.humidity}/>
+          <WeatherCondition condition={day.weather[0].main}/>
+          <WeatherHumidity humidity={day.humidity + "%"}/>
         </DailyForecastCard>
     )
   })
