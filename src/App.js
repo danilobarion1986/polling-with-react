@@ -10,6 +10,7 @@ import WeatherDate from "./Components/WeatherDate";
 import ForecastList from './Components/ForecastList';
 import AppHeader from "./Components/AppHeader";
 import AppFooter from './Components/AppFooter';
+import WeatherIcon from "./Components/WeatherIcon";
 
 function App() {
   const apiKey = process.env.REACT_APP_WEATHER_API_KEY
@@ -33,6 +34,7 @@ function App() {
         <DailyForecastCard key={index}>
           <WeatherDate date={convertTimestampToDate(day.dt)}/>
           <HeatIndicator maxHeat={Math.round(day.temp.max)}/>
+          <WeatherIcon iconNum={day.weather[0].icon} iconDescription={day.weather[0].description}/>
           <WeatherTemp 
             maxTemp={Math.round(day.temp.max) + "º"}
             minTemp={Math.round(day.temp.min) + "º"}
@@ -64,7 +66,7 @@ function App() {
             return (
               <React.Fragment>
                 <AppHeader />
-                <main style={{paddingTop: "56px"}}>
+                <main style={{padding: "56px 0 30px"}}>
                   <ForecastTitle title={"5-day weather forecast for Sao Paulo"}/>
                   <ForecastList>
                     {CardWeatherData}

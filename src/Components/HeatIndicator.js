@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledSpan = styled.span`
-  width: 4em;
-	height: 15px;
+  width: 5em;
+	height: 10px;
   margin: 0.2em;
   background-color: ${props => props.color};
 	border-radius: 10px;

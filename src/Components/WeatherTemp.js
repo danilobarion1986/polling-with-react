@@ -1,15 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-const DivStyled = styled.h3`
+const DivStyled = styled.div`
   display: block;
-  margin: inherit;
+  margin-bottom: 0.8em;
+  min-width: max-content;
   @media (max-width: 680px) {
     grid-area: temp;
   }
 `
 const MaxTempSpan = styled.span`
-  font-size: 1.9em;
+  font-size: 1.6em;
 	font-weight: 700;
 `
 

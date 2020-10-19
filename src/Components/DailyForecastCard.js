@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const CardStyled = styled.div`
-  margin: 1em;
+  margin: 0.3em;
   padding: 1em;
   display: flex;
   flex-direction: column;
@@ -14,11 +14,11 @@ const CardStyled = styled.div`
   background-color: #E0E0E0;
   @media (max-width: 680px) {
 		display: grid;
-		gap: 0.7em;
+		gap: 0.3em;
 		grid-template-areas: 
-			"date temp"
-			"heat temp"
-			"humidity condition";
+			"date heat"
+      "icon temp"
+      "condition humidity";
 		place-items: center;
   }
 `
