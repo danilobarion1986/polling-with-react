@@ -6,6 +6,7 @@ const DivStyled = styled.div`
   margin: 0.5em;
 	flex-flow: row;
   justify-content: center;
+  align-items: center;
   @media (max-width: 680px) {
     flex-flow: column;
   }
