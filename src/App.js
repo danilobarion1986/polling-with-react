@@ -83,9 +83,7 @@ export default App;
 /* 
 
 To DO:
-
-- create logic for display heat color box
-- remove dec
-
+- Remove DailyForecastCard internal comps and pass weatherData as props
+- Improve "No more weather" DIV style
 
 */
