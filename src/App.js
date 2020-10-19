@@ -14,6 +14,7 @@ function App() {
   const lat =  "-23.5489";
   const lon =  "-46.6388";
   const part = "hourly,minutely";
+  const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=${part}&appid=${apiKey}&units=metric`
   const [weatherData, setWeatherData] = useState([])
 
   const convertTimestampToDate = (unixTimestamp) => {
@@ -46,7 +47,7 @@ function App() {
     <div className="App">
 
       <ReactPolling
-        url={`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=${part}&appid=${apiKey}&units=metric`}
+        url={url}
         interval= {10000}
         retryCount={2}
         onSuccess={(response) => {
