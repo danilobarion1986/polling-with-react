@@ -24,7 +24,6 @@ function App() {
     let date = new Date(unixTimestamp * 1000);
     let day = date.getDate(); 
     let month = date.getMonth() + 1;
-    /* let year = date.getFullYear(); */
 
     return `${day}/${month}` 
   }
@@ -87,11 +86,3 @@ function App() {
 }
 
 export default App;
-
-/* 
-
-To DO:
-- Remove DailyForecastCard internal comps and pass weatherData as props
-- Improve "No more weather" DIV style
-
-*/
