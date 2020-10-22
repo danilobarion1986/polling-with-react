@@ -17,8 +17,8 @@ function App() {
   const lat =  "-23.5489";
   const lon =  "-46.6388";
   const part = "hourly,minutely";
-  const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=${part}&appid=${apiKey}&units=metric`
-  const [weatherData, setWeatherData] = useState([])
+  const url = `${process.env.REACT_APP_API_URL}?lat=${lat}&lon=${lon}&exclude=${part}&appid=${apiKey}&units=metric`;
+  const [weatherData, setWeatherData] = useState([]);
 
   const convertTimestampToDate = (unixTimestamp) => {
     let date = new Date(unixTimestamp * 1000);
