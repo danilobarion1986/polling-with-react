@@ -49,7 +49,7 @@ function App() {
 
       <ReactPolling
         url={url}
-        interval= {10000}
+        interval={21600000}
         retryCount={2}
         onSuccess={(response) => {
             console.log(response);
