@@ -7,16 +7,10 @@ const HeadingStyled = styled.h3`
   @media (max-width: 680px) {
     grid-area: date;
   }
-`
-
+`;
 
 function WeatherDate(props) {
-  return (
-    <HeadingStyled >
-      {props.date}
-    </HeadingStyled>
-  )
-
+  return <HeadingStyled>{props.date}</HeadingStyled>;
 }
 
 export default WeatherDate;

@@ -8,16 +8,15 @@ const ImageStyled = styled.img`
   @media (max-width: 680px) {
     grid-area: icon;
     width: 70px;
-`
-
+`;
 
 function WeatherIcon(props) {
   return (
-    <ImageStyled 
+    <ImageStyled
       src={`http://openweathermap.org/img/wn/${props.iconNum}@2x.png`}
       alt={props.iconDescription}
     />
-  )
+  );
 }
 
 export default WeatherIcon;

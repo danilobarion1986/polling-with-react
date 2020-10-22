@@ -11,25 +11,20 @@ const CardStyled = styled.div`
   max-width: 600px;
   border: none;
   border-radius: 30px;
-  background-color: #E0E0E0;
+  background-color: #e0e0e0;
   @media (max-width: 680px) {
-		display: grid;
-		gap: 0.3em;
-		grid-template-areas: 
-			"date heat"
+    display: grid;
+    gap: 0.3em;
+    grid-template-areas:
+      "date heat"
       "icon temp"
       "condition humidity";
-		place-items: center;
+    place-items: center;
   }
-`
-
+`;
 
 function DailyForecastCard(props) {
-  return (
-    <CardStyled>
-      {props.children}
-    </CardStyled>
-  )
+  return <CardStyled>{props.children}</CardStyled>;
 }
 
 export default DailyForecastCard;

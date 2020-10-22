@@ -3,17 +3,12 @@ import styled from "styled-components";
 
 const HeaderStyled = styled.h2`
   text-align: center;
-	margin: 1em;
-	color: #E0E0E0;
-`
-
+  margin: 1em;
+  color: #e0e0e0;
+`;
 
 function ForecastTitle(props) {
-  return (
-    <HeaderStyled>
-      {props.title}
-    </HeaderStyled>
-  )
+  return <HeaderStyled>{props.title}</HeaderStyled>;
 }
 
 export default ForecastTitle;

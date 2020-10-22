@@ -7,16 +7,10 @@ const ParagStyled = styled.p`
   @media (max-width: 680px) {
     grid-area: condition;
   }
-`
-
+`;
 
 function WeatherCondition(props) {
-  return (
-    <ParagStyled >
-      {props.condition}
-    </ParagStyled>
-  )
-
+  return <ParagStyled>{props.condition}</ParagStyled>;
 }
 
 export default WeatherCondition;

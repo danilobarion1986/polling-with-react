@@ -8,26 +8,25 @@ const DivStyled = styled.div`
   @media (max-width: 680px) {
     grid-area: temp;
   }
-`
+`;
 const MaxTempSpan = styled.span`
   font-size: 1.6em;
-	font-weight: 700;
-`
+  font-weight: 700;
+`;
 
 const MinTempSpan = styled.span`
   font-size: 1.2em;
-	font-weight: 400;
-`
+  font-weight: 400;
+`;
 
 function WeatherTemp(props) {
   return (
-    <DivStyled >
+    <DivStyled>
       <MaxTempSpan>{props.maxTemp}</MaxTempSpan>
       {" /"}
       <MinTempSpan>{props.minTemp}</MinTempSpan>
     </DivStyled>
-  )
-
+  );
 }
 
 export default WeatherTemp;

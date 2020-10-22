@@ -8,16 +8,10 @@ const ParagStyled = styled.p`
   @media (max-width: 680px) {
     grid-area: humidity;
   }
-`
-
+`;
 
 function WeatherHumidity(props) {
-  return (
-    <ParagStyled >
-      Hum. {props.humidity}
-    </ParagStyled>
-  )
-
+  return <ParagStyled>Hum. {props.humidity}</ParagStyled>;
 }
 
 export default WeatherHumidity;
