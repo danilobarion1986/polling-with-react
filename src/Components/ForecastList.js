@@ -1,5 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import DailyForecastCard from "./DailyForecastCard";
+import HeatIndicator from "./HeatIndicator";
+import WeatherCondition from "./WeatherCondition";
+import WeatherDate from "./WeatherDate";
+import WeatherHumidity from "./WeatherHumidity";
+import WeatherIcon from "./WeatherIcon";
+import WeatherTemp from "./WeatherTemp";
 
 const DivStyled = styled.div`
   display: flex;
@@ -13,7 +20,34 @@ const DivStyled = styled.div`
 `;
 
 function ForecastList(props) {
-  return <DivStyled>{props.children}</DivStyled>;
+  const convertTimestampToDate = (unixTimestamp) => {
+    let date = new Date(unixTimestamp * 1000);
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+
+    return `${day}/${month}`;
+  };
+
+  const weatherCards = props.weatherData.slice(0, 5).map((day, index) => {
+    return (
+      <DailyForecastCard key={index}>
+        <WeatherDate date={convertTimestampToDate(day.dt)} />
+        <HeatIndicator maxHeat={Math.round(day.temp.max)} />
+        <WeatherIcon
+          iconNum={day.weather[0].icon}
+          iconDescription={day.weather[0].description}
+        />
+        <WeatherTemp
+          maxTemp={Math.round(day.temp.max) + "º"}
+          minTemp={Math.round(day.temp.min) + "º"}
+        />
+        <WeatherCondition condition={day.weather[0].main} />
+        <WeatherHumidity humidity={day.humidity + "%"} />
+      </DailyForecastCard>
+    );
+  });
+
+  return <DivStyled>{weatherCards}</DivStyled>;
 }
 
 export default ForecastList;

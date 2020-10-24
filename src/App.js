@@ -1,16 +1,9 @@
 import React, { useState } from "react";
 import ReactPolling from "react-polling";
-import DailyForecastCard from "./Components/DailyForecastCard";
 import ForecastTitle from "./Components/ForecastTitle";
-import HeatIndicator from "./Components/HeatIndicator";
-import WeatherCondition from "./Components/WeatherCondition";
-import WeatherHumidity from "./Components/WeatherHumidity";
-import WeatherTemp from "./Components/WeatherTemp";
-import WeatherDate from "./Components/WeatherDate";
 import ForecastList from "./Components/ForecastList";
 import AppHeader from "./Components/AppHeader";
 import AppFooter from "./Components/AppFooter";
-import WeatherIcon from "./Components/WeatherIcon";
 import LocationForm from "./Components/LocationForm/LocationForm";
 
 function App() {
@@ -28,25 +21,6 @@ function App() {
 
     return `${day}/${month}`;
   };
-
-  const CardWeatherData = weatherData.slice(0, 5).map((day, index) => {
-    return (
-      <DailyForecastCard key={index}>
-        <WeatherDate date={convertTimestampToDate(day.dt)} />
-        <HeatIndicator maxHeat={Math.round(day.temp.max)} />
-        <WeatherIcon
-          iconNum={day.weather[0].icon}
-          iconDescription={day.weather[0].description}
-        />
-        <WeatherTemp
-          maxTemp={Math.round(day.temp.max) + "º"}
-          minTemp={Math.round(day.temp.min) + "º"}
-        />
-        <WeatherCondition condition={day.weather[0].main} />
-        <WeatherHumidity humidity={day.humidity + "%"} />
-      </DailyForecastCard>
-    );
-  });
 
   return (
     <div className="App">
