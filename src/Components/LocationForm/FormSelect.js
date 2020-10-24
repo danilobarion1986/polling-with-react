@@ -16,7 +16,7 @@ function FormSelect(props) {
 
   return (
     <SelectStyled>
-      <option value={""} selected hidden>
+      <option value={""} defaultValue hidden>
         {props.defaultOption}
       </option>
       {dropdownOptions}
