@@ -11,6 +11,7 @@ import ForecastList from "./Components/ForecastList";
 import AppHeader from "./Components/AppHeader";
 import AppFooter from "./Components/AppFooter";
 import WeatherIcon from "./Components/WeatherIcon";
+import LocationForm from "./Components/LocationForm/LocationForm";
 
 function App() {
   const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
@@ -51,7 +52,7 @@ function App() {
     <div className="App">
       <ReactPolling
         url={url}
-        interval={21600000}
+        interval={600000}
         retryCount={2}
         onSuccess={(response) => {
           console.log(response);
@@ -67,6 +68,7 @@ function App() {
               <React.Fragment>
                 <AppHeader />
                 <main style={{ padding: "56px 0 30px" }}>
+                  <LocationForm />
                   <ForecastTitle
                     title={"5-day weather forecast for Sao Paulo"}
                   />
