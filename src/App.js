@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import ReactPolling from "react-polling";
-import ForecastTitle from "./Components/ForecastTitle";
-import ForecastList from "./Components/ForecastList";
+import ForecastTitle from "./Components/DailyForecastList/ForecastTitle";
+import ForecastList from "./Components/DailyForecastList/ForecastList";
 import AppHeader from "./Components/Layout/AppHeader";
-import AppFooter from "./Components/AppFooter";
+import AppFooter from "./Components/Layout/AppFooter";
 import LocationForm from "./Components/LocationForm/LocationForm";
 
 function App() {

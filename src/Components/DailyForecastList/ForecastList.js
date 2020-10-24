@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import DailyForecastCard from "./DailyForecastCard";
-import HeatIndicator from "./HeatIndicator";
-import WeatherCondition from "./WeatherCondition";
-import WeatherDate from "./WeatherDate";
-import WeatherHumidity from "./WeatherHumidity";
-import WeatherIcon from "./WeatherIcon";
-import WeatherTemp from "./WeatherTemp";
+import HeatIndicator from "../WeatherCard/HeatIndicator";
+import WeatherCondition from "../WeatherCard/WeatherCondition";
+import WeatherDate from "../WeatherCard/WeatherDate";
+import WeatherHumidity from "../WeatherCard/WeatherHumidity";
+import WeatherIcon from "../WeatherCard/WeatherIcon";
+import WeatherTemp from "../WeatherCard/WeatherTemp";
 
 const DivStyled = styled.div`
   display: flex;
