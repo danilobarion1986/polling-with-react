@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import FormLabel from "./FormLabel";
 import FormSelect from "./FormSelect";
+import locations from "../../LocationGeoData";
 
 const DivStyled = styled.div`
   display: flex;
@@ -12,10 +13,12 @@ const DivStyled = styled.div`
 `;
 
 function LocationListSelect(props) {
+  const locationList = Object.keys(locations);
+
   return (
     <DivStyled>
       <FormLabel labelText={"Cities"} />
-      <FormSelect options={[""]} defaultOption={"Pick a city"} />
+      <FormSelect options={locationList} defaultOption={"select a city"} />
       {props.children}
     </DivStyled>
   );
