@@ -6,7 +6,7 @@ const SelectStyled = styled.select`
 `;
 
 function FormSelect(props) {
-  const dropdownOptions = props.options.map((opt, index) => {
+  const dropdownOptions = Object.keys(props.options).map((opt, index) => {
     return (
       <option key={index} value={opt}>
         {opt}
@@ -14,8 +14,12 @@ function FormSelect(props) {
     );
   });
 
+  const getSelectedValue = (e) => {
+    props.selected(e.target.value);
+  };
+
   return (
-    <SelectStyled>
+    <SelectStyled onChange={getSelectedValue}>
       <option value={""} defaultValue hidden>
         {props.defaultOption}
       </option>

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import FormLabel from "./FormLabel";
 import FormSelect from "./FormSelect";
-import locations from "../../LocationGeoData";
+import locations from "../../locationGeoData";
 
 const DivStyled = styled.div`
   display: flex;
@@ -13,12 +13,19 @@ const DivStyled = styled.div`
 `;
 
 function LocationListSelect(props) {
-  const locationList = Object.keys(locations);
+  const handleSelected = (cityGeoData) => {
+    props.setLatitude(locations[cityGeoData].lat);
+    props.setLongitude(locations[cityGeoData].lon);
+  };
 
   return (
     <DivStyled>
       <FormLabel labelText={"Cities"} />
-      <FormSelect options={locationList} defaultOption={"select a city"} />
+      <FormSelect
+        options={locations}
+        defaultOption={"select a city"}
+        selected={handleSelected}
+      />
       {props.children}
     </DivStyled>
   );
