@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import FormLabel from "./FormLabel";
 import FormSelect from "./FormSelect";
-import locations from "../../locationGeoData";
+import locations from "../../Utils/locationGeoData";
 
 const DivStyled = styled.div`
   display: flex;

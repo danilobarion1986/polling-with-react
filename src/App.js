@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactPolling from "react-polling";
 import ForecastTitle from "./Components/ForecastTitle";
 import ForecastList from "./Components/ForecastList";
-import AppHeader from "./Components/AppHeader";
+import AppHeader from "./Components/Layout/AppHeader";
 import AppFooter from "./Components/AppFooter";
 import LocationForm from "./Components/LocationForm/LocationForm";
 
