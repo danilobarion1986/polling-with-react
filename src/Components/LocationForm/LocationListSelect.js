@@ -4,7 +4,9 @@ import FormLabel from "./FormLabel";
 import FormSelect from "./FormSelect";
 
 const DivStyled = styled.div`
-  display: grid;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
   gap: 15px;
   grid-area: select;
 `;
