@@ -18,7 +18,6 @@ function App() {
   // Needs better validation here to avoid wrong data input!
 
   const sendInputData = (geoData) => {
-    console.log(geoData);
     if (geoData.lat && geoData.lon) {
       setGeoData(geoData);
       setPollingState(true);
@@ -31,8 +30,6 @@ function App() {
       interval={30000}
       retryCount={2}
       onSuccess={(response) => {
-        console.log(response);
-        console.log("handle success");
         setWeatherData(response.daily);
         setLocationName(response.timezone);
         return true;
