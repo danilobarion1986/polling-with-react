@@ -20,7 +20,7 @@ It uses a react-polling library that emulates a [HTTP long polling](https://www.
  Sign up to [OpenWeatherMap](https://openweathermap.org/) and get a free key for One Call API.
 
 
-**2)** Dowload or fork this repository and install the packages locally with:
+**2)** Download or fork this repository and install the packages locally with:
  
  ```
  yarn install
@@ -28,7 +28,7 @@ It uses a react-polling library that emulates a [HTTP long polling](https://www.
 
 **3)** Setup enviroment variables 
 
-Create an .env file in the root folder of your project to store both **API key** and **API URL** with this names:
+Create an .env file in the root folder of your project to store both **API key** and **API URL** with these names:
 
  ```
  REACT_APP_WEATHER_API_KEY = your_api_key_goes_here
