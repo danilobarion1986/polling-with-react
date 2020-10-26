@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import FormButton from "./FormButton";
-import LocationCoordinatesInput from "./LocationCoordinatesInput";
-import LocationFormLegend from "./LocationFormLegend";
-import LocationListSelect from "./LocationListSelect";
+import FormButton from "./Button";
+import CoordinatesInput from "./CoordinatesInput";
+import Subtitle from "./Subtitle";
+import LocationList from "./LocationList";
 
 const FormStyled = styled.form`
   display: grid;
@@ -22,7 +22,7 @@ const FormStyled = styled.form`
   border-radius: 20px;
 `;
 
-function LocationForm(props) {
+function Form(props) {
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
 
@@ -47,20 +47,17 @@ function LocationForm(props) {
 
   return (
     <FormStyled>
-      <LocationFormLegend
+      <Subtitle
         legend={"Type latitude and longitude OR choose a city from the list"}
       />
-      <LocationCoordinatesInput
+      <CoordinatesInput
         changedLatitude={handleLatitudeInput}
         changedLongitude={handleLongitudeInput}
       />
-      <LocationListSelect
-        setLatitude={setLatitude}
-        setLongitude={setLongitude}
-      />
+      <LocationList setLatitude={setLatitude} setLongitude={setLongitude} />
       <FormButton clicked={sendGeoDataInput} name={"Get weather"} />
     </FormStyled>
   );
 }
 
-export default LocationForm;
+export default Form;

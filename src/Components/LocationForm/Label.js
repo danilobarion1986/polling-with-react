@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const LabelStyled = styled.label``;
 
-function FormLabel(props) {
+function Label(props) {
   return (
     <LabelStyled>
       {props.labelText}
@@ -12,4 +12,4 @@ function FormLabel(props) {
   );
 }
 
-export default FormLabel;
+export default Label;

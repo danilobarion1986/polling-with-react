@@ -17,8 +17,8 @@ const ButtonStyled = styled.button`
   }
 `;
 
-function FormButton(props) {
+function Button(props) {
   return <ButtonStyled onClick={props.clicked}>{props.name}</ButtonStyled>;
 }
 
-export default FormButton;
+export default Button;

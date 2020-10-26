@@ -13,10 +13,10 @@ const InputStyled = styled.input`
   }
 `;
 
-function FormInput(props) {
+function Input(props) {
   return (
     <InputStyled onChange={props.onChange} placeholder={props.placeholder} />
   );
 }
 
-export default FormInput;
+export default Input;

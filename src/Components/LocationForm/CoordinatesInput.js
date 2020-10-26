@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import FormInput from "./FormInput";
-import FormLabel from "./FormLabel";
+import Input from "./Input";
+import FormLabel from "./Label";
 
 const FieldsetStyled = styled.fieldset`
   display: flex;
@@ -11,18 +11,18 @@ const FieldsetStyled = styled.fieldset`
   border: none;
 `;
 
-function LocationCoordinatesInput(props) {
+function CoordinatesInput(props) {
   return (
     <FieldsetStyled>
       <FormLabel labelText={"Lat: "} id={"latitude-label"}>
-        <FormInput
+        <Input
           type={"text"}
           onChange={props.changedLatitude}
           placeholder={"ex: -46.6388"}
         />
       </FormLabel>
       <FormLabel labelText={"Lon: "} id={"longitude-label"}>
-        <FormInput
+        <Input
           type={"text"}
           onChange={props.changedLongitude}
           placeholder={"ex: -23.5489"}
@@ -32,4 +32,4 @@ function LocationCoordinatesInput(props) {
   );
 }
 
-export default LocationCoordinatesInput;
+export default CoordinatesInput;

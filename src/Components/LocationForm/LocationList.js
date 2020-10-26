@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import FormLabel from "./FormLabel";
-import FormSelect from "./FormSelect";
+import Label from "./Label";
+import Select from "./Select";
 import locations from "../../Utils/locationGeoData";
 
 const DivStyled = styled.div`
@@ -12,7 +12,7 @@ const DivStyled = styled.div`
   grid-area: select;
 `;
 
-function LocationListSelect(props) {
+function LocationList(props) {
   const handleSelected = (cityGeoData) => {
     props.setLatitude(locations[cityGeoData].lat);
     props.setLongitude(locations[cityGeoData].lon);
@@ -20,8 +20,8 @@ function LocationListSelect(props) {
 
   return (
     <DivStyled>
-      <FormLabel labelText={"Cities"} />
-      <FormSelect
+      <Label labelText={"Cities"} />
+      <Select
         options={locations}
         defaultOption={"select a city"}
         selected={handleSelected}
@@ -31,4 +31,4 @@ function LocationListSelect(props) {
   );
 }
 
-export default LocationListSelect;
+export default LocationList;

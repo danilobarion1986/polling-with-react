@@ -4,7 +4,7 @@ import ForecastTitle from "./Components/DailyForecastList/ForecastTitle";
 import ForecastList from "./Components/DailyForecastList/ForecastList";
 import AppHeader from "./Components/Layout/AppHeader";
 import AppFooter from "./Components/Layout/AppFooter";
-import LocationForm from "./Components/LocationForm/LocationForm";
+import LocationForm from "./Components/LocationForm/Form";
 
 function App() {
   const [weatherData, setWeatherData] = useState([]);

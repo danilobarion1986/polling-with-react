@@ -8,8 +8,8 @@ const LegendStyled = styled.legend`
   grid-area: legend;
 `;
 
-function LocationFormLegend(props) {
+function Subtitle(props) {
   return <LegendStyled>{props.legend}</LegendStyled>;
 }
 
-export default LocationFormLegend;
+export default Subtitle;

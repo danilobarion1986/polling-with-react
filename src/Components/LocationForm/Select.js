@@ -5,7 +5,7 @@ const SelectStyled = styled.select`
   outline: none;
 `;
 
-function FormSelect(props) {
+function Select(props) {
   const dropdownOptions = Object.keys(props.options).map((opt, index) => {
     return (
       <option key={index} value={opt}>
@@ -28,4 +28,4 @@ function FormSelect(props) {
   );
 }
 
-export default FormSelect;
+export default Select;
