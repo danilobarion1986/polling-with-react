@@ -9,6 +9,9 @@ import Form from "./Components/LocationForm/Form";
 function App() {
   const [weatherData, setWeatherData] = useState([]);
   const [locationName, setLocationName] = useState("");
+  const [latitude, setLatitude] = useState("");
+  const [longitude, setLongitude] = useState("");
+  const [selectedLocation, setSelectedLocation] = useState("");
   const [geoData, setGeoData] = useState({ lat: "", lon: "" });
   const [pollingState, setPollingState] = useState(false);
   const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
@@ -57,7 +60,15 @@ function App() {
     <div className="App">
       <AppHeader />
       <main style={{ padding: "56px 0 30px" }}>
-        <Form getWeather={sendInputData} />
+        <Form
+          latitude={latitude}
+          longitude={longitude}
+          setLatitude={setLatitude}
+          setLongitude={setLongitude}
+          selectedLocation={selectedLocation}
+          setSelectedLocation={setSelectedLocation}
+          getWeather={sendInputData}
+        />
         {isPolling}
       </main>
       <AppFooter />

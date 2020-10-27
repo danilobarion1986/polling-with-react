@@ -15,7 +15,11 @@ const InputStyled = styled.input`
 
 function Input(props) {
   return (
-    <InputStyled onChange={props.onChange} placeholder={props.placeholder} />
+    <InputStyled
+      onChange={props.onChange}
+      placeholder={props.placeholder}
+      value={props.value}
+    />
   );
 }
 

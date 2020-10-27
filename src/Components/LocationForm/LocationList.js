@@ -25,6 +25,8 @@ function LocationList(props) {
         options={locations}
         defaultOption={"select a city"}
         selected={handleSelected}
+        selectedValue={props.selectedLocation}
+        setSelectedValue={props.setSelectedLocation}
       />
       {props.children}
     </DivStyled>
