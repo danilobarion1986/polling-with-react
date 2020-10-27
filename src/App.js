@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactPolling from "react-polling";
 import ForecastTitle from "./Components/DailyForecastList/ForecastTitle";
 import ForecastList from "./Components/DailyForecastList/ForecastList";
@@ -22,15 +22,23 @@ function App() {
 
   const sendInputData = (geoData) => {
     if (geoData.lat && geoData.lon) {
+      setWeatherData([]);
+      setLocationName("");
       setGeoData(geoData);
-      setPollingState(true);
+      setPollingState(false);
     }
   };
+
+  useEffect(() => {
+    if (!pollingState && geoData.lat && geoData.lon) {
+      setPollingState((prevState) => !prevState);
+    }
+  }, [pollingState, geoData]);
 
   const isPolling = pollingState && (
     <ReactPolling
       url={url}
-      interval={30000}
+      interval={10000}
       retryCount={2}
       onSuccess={(response) => {
         setWeatherData(response.daily);
@@ -40,7 +48,7 @@ function App() {
       onFailure={(error) => console.log(error)}
       method={"GET"}
       render={({ startPolling, stopPolling, isPolling }) => {
-        if (isPolling) {
+        if (isPolling && locationName) {
           return (
             <React.Fragment>
               <ForecastTitle
@@ -49,8 +57,8 @@ function App() {
               <ForecastList weatherData={weatherData} />
             </React.Fragment>
           );
-        } else {
-          return <div> No more weather today! Bye!</div>;
+        } else if (isPolling && !locationName) {
+          return <h3>The forecast is coming...</h3>;
         }
       }}
     />
