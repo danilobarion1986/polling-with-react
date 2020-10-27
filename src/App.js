@@ -38,7 +38,7 @@ function App() {
   const isPolling = pollingState && (
     <ReactPolling
       url={url}
-      interval={10000}
+      interval={30000}
       retryCount={2}
       onSuccess={(response) => {
         setWeatherData(response.daily);
@@ -59,6 +59,8 @@ function App() {
           );
         } else if (isPolling && !locationName) {
           return <h3>The forecast is coming...</h3>;
+        } else {
+          return <h3> No forecast yet. Choose a location!</h3>;
         }
       }}
     />
