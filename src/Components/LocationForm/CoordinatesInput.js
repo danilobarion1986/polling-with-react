@@ -19,6 +19,7 @@ function CoordinatesInput(props) {
           type={"text"}
           onChange={props.changedLatitude}
           placeholder={"ex: -46.6388"}
+          value={props.latitude}
         />
       </FormLabel>
       <FormLabel labelText={"Lon: "} id={"longitude-label"}>
@@ -26,6 +27,7 @@ function CoordinatesInput(props) {
           type={"text"}
           onChange={props.changedLongitude}
           placeholder={"ex: -23.5489"}
+          value={props.longitude}
         />
       </FormLabel>
     </FieldsetStyled>

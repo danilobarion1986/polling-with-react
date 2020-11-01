@@ -15,15 +15,18 @@ function Select(props) {
   });
 
   const getSelectedValue = (e) => {
-    props.selected(e.target.value);
+    const selectedOption = e.target.value;
+    props.selected(selectedOption);
+    props.setSelectedValue(selectedOption);
   };
 
   return (
-    <SelectStyled onChange={getSelectedValue}>
+    <SelectStyled onChange={getSelectedValue} value={props.selectedValue}>
       <option value={""} defaultValue hidden>
         {props.defaultOption}
       </option>
       {dropdownOptions}
+      <option value={"custom"}>Custom</option>
     </SelectStyled>
   );
 }
