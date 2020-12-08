@@ -1,11 +1,10 @@
-# Weather app with polling 
+# Weather app with polling
 
 This is a ReactJS Weather Forecast application that fetches data from the OpenWeatherMap One Call API.
 
 It uses a react-polling library that emulates a [HTTP long polling](https://www.ably.io/topic/long-polling) technique to update the requested data regurlarly.
 
-
-## Built with
+## Built with <3 using:
 
 - [Create React App](https://github.com/facebook/create-react-app)
 - [React Polling](https://github.com/vivek12345/react-polling)
@@ -21,22 +20,22 @@ It uses a react-polling library that emulates a [HTTP long polling](https://www.
 
 
 **2)** Download or fork this repository and install the packages locally with:
- 
+
  ```
  yarn install
- ``` 
+ ```
 
-**3)** Setup enviroment variables 
+**3)** Setup enviroment variables
 
 Create an .env file in the root folder of your project to store both **API key** and **API URL** with these names:
 
  ```
  REACT_APP_WEATHER_API_KEY = your_api_key_goes_here
- 
+
  REACT_APP_API_URL = https://api.openweathermap.org/data/2.5/onecall
  ```
 
-**4)** Run the app in the development mode. 
+**4)** Run the app in the development mode.
 
 ```
 yarn start
@@ -51,7 +50,7 @@ In order to get a 5-day weather forecast:
 
 **1)** **Select** a custom location from the list **OR type** latitude and longitude coordinates in decimal degrees format (99.9999 / -99.9999). (You can find this data for any location here: [latlong.net](https://www.latlong.net/lat-long-dms.html))
 
-**2)** **click Get Weather** 
+**2)** **click Get Weather**
 
 If the request is sucessful, the app will render 5 cards displaying:
 
@@ -61,10 +60,9 @@ If the request is sucessful, the app will render 5 cards displaying:
 - Weather condition thumbnail
 - Humidity values
 
-
 ## Contribute
 
-Contributions to this project are welcome. 
+Contributions to this project are welcome.
 Check the open issues for a list of proposed features (and known issues).
 
 1. Fork the Project
